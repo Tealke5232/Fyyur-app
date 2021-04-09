@@ -1,0 +1,26 @@
+{% extends 'layouts/main.html' %}
+{% block title %}New song{% endblock %}
+{% block content %}
+  <div class="form-wrapper">
+    <form method="post" class="form">
+      <h3 class="form-heading">List a New Song</h3>
+      <div class="form-group">
+        <label for="artist_id">Song title</label>
+        {{ form.name(class_ = 'form-control', autofocus = true) }}
+      </div>
+      <div class="form-group">
+        <label for="venue_id">Description</label>
+        {{ form.description(class_ = 'form-control', autofocus = true) }}
+      </div>
+      <div class="form-group">
+        <label for="venue_id">Cover Image Link</label>
+        {{ form.image_link(class_ = 'form-control', autofocus = true) }}
+      </div>
+      <div class="form-group">
+          <label for="start_time">Title Release Date</label>
+          {{ form.release_date(class_ = 'form-control', placeholder='YYYY-MM-DD HH:MM', autofocus = true) }}
+        </div>
+      <input type="submit" value="Submit song" class="btn btn-primary btn-lg btn-block">
+    </form>
+  </div>
+{% endblock %}
